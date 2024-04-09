@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Nota</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        {{ nota_form.as_p }}
+        <button type="submit">
+            CREAR NOTA
+        </button>
+
+    </form>
+</body>
+</html>
