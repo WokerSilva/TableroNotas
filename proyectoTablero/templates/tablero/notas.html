@@ -6,6 +6,28 @@
     <title>NOTAS</title>
 </head>
 <body>
-    Esta es la pagina de las notas
+    <h1>Esta es la pagina de las notas</h1>
+    {% if notas %}
+    <table>
+        <thead>
+            <tr>
+                <th> # </th>
+                <th> Titulo </th>
+                <th> Contenido </th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for nota in notas %}
+            <tr>
+                <td> {{nota.id}} </td>
+                <td> {{nota.titulo}} </td>
+                <td> {{nota.contenido}} </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <p> no hay registros </p>
+    {% endif %}
 </body>
 </html>

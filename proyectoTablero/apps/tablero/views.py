@@ -1,11 +1,13 @@
 from django.shortcuts import render,redirect
+from .models import Nota
 from .forms import NotaForm
 # Create your views here.
 def Home(request):
     return render(request, 'index.html')
 
 def Notas(request):
-    return render(request, 'tablero/notas.html')
+    notas = Nota.objects.all()
+    return render(request, 'tablero/notas.html',{'notas':notas})
 
 def crearNota(request):
     if request.method == "POST":
@@ -16,3 +18,4 @@ def crearNota(request):
     else:
         nota_form = NotaForm()
     return render(request, 'tablero/crear_nota.html',{'nota_form':nota_form})
+
