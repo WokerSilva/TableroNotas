@@ -1,0 +1,68 @@
+body.body{
+    max-width: 1350px; /* Ancho maximo */
+    margin: auto;      /* Magen automatico */  
+    min-height: 100vh; /* Altura mínima de la ventana gráfica */
+    background-color: #2a6905; /*343a40*/ 
+}
+
+
+/* Contenedor principal del footer */
+/* Estilos para el footer 232D3E */
+footer.sticky-footer {
+    background-color: #aaba58;    
+    color: white;        
+    margin-left: 0px;
+    margin-top: 810px;
+    height: 64px;
+    max-width: 1350px; /* Ancho maximo */
+    bottom: 0;  
+}
+
+.navbar{
+    background-color: #232D3E;    
+  }
+  
+  .navbar-brand,
+  .nav-link{
+   color: white; 
+  }
+  
+  .nav-item{
+    color: white;
+  }
+  
+  /* 
+  Ponemos la jerarquia del contenedor que contiene la imagen del logo  
+  */
+  .Logo {
+    max-width: 58%; /* La imagen se ajuste al ancho del navbar-brand */
+    height: auto;    /* Ajusta automáticamente la altura */
+  }
+  
+  .navbar-toggler{
+    background-color: #E0E0E0;
+  }
+  
+  /*
+  * Tamaño del icono del menú
+  */
+  .user-dropdown,
+  .cart-icon{
+    font-size: 25px;    
+    color: white;
+    display: inline-block;
+    margin-right: 25px; /* Agrega una separación de 10px entre los elementos */
+  }
+  
+  .user-dropdown:hover {
+      color: orange;
+  }
+  .cart-icon:hover {
+    color: orange; 
+  }
+  /*
+  * Esconde el triangulo del dropmenu
+  */
+  .dropdown-toggle{
+    color: #232D3E;
+  }
