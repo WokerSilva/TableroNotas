@@ -49,3 +49,4 @@ def eliminarNota(request, id):
     nota = Nota.objects.get(id = id)
     nota.delete()
     return redirect('tablero:notas')
+

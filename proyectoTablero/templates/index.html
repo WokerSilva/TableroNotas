@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> HOME </title>
+    <title>{% block titulo %} HOME {% endblock %} </title>
 </head>
 <body>
-    Pagina de inicio
+    {% include "navbar.html"%}
+    {% block home %} 
+    
+    PAGINA INICIAL
+    
+    {% endblock %}
+    {% block contenido %} 
+    
+    
+    
+    {% endblock %}    
+    {% include "footer.html"%}
 </body>
 </html>
