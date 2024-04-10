@@ -8,11 +8,12 @@
 <body>
     <form method="POST">
         {% csrf_token %}
-        {{ nota_form.as_p }}
-        <button type="submit">
-            CREAR NOTA
-        </button>
-
+        {% if error %}
+            <h2>{{ error }}</h2>
+        {% else %}
+            {{ nota_form.as_p }}
+        {% endif %}
+        <button type="submit"> CREAR NOTA </button>
     </form>
 </body>
 </html>
