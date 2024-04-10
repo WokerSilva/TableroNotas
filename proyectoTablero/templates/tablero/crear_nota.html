@@ -10,10 +10,13 @@
         {% csrf_token %}
         {% if error %}
             <h2>{{ error }}</h2>
-        {% else %}
-            {{ nota_form.as_p }}
         {% endif %}
-        <button type="submit"> CREAR NOTA </button>
+        <label for="id_titulo">Titulo</label>
+    <input type="text" id="id_titulo" name="titulo" value="{{ nota_form.instance.titulo }}">
+    <label for="id_contenido">Contenido</label>
+    <input type="text" id="id_contenido" name="contenido" value="{{ nota_form.instance.contenido }}">
+    <button type="submit">Guardar cambios</button>
+        
     </form>
 </body>
-</html>
+</html> 

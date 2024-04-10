@@ -17,13 +17,12 @@ def Notas(request):
 # Esta función carga la pagina para crear las notas
 def crearNota(request):
     if request.method == "POST":
-        nota_form = NotaForm(request.POST)
-        if nota_form.is_valid():
-            nota_form.save()
-            return redirect('notas')
-    else:
-        nota_form = NotaForm()
-    return render(request, 'tablero/crear_nota.html',{'nota_form':nota_form})
+        tit = request.POST.get('titulo')
+        conten = request.POST.get('contenido')
+        nota = Nota(titulo = tit, contenido = conten )
+        nota.save()
+        return redirect('notas')
+    return render(request, 'tablero/crear_nota.html')
 
 def editarNota(request, id):
     nota_form = None
@@ -41,3 +40,12 @@ def editarNota(request, id):
     except ObjectDoesNotExist as e:
         error = e
     return render(request,'tablero/crear_nota.html',{'nota_form':nota_form,'error':error})
+
+# Eliminamos la nota directamente 
+#  podemos usar otra verificación con POST
+#  antes quiero probar si la advetencia de eliminar 
+#  se pude hacer con alert y evitar crear otra pagina
+def eliminarNota(request, id):
+    nota = Nota.objects.get(id = id)
+    nota.delete()
+    return redirect('tablero:notas')
