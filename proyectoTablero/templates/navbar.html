@@ -30,11 +30,23 @@
             <!-- Botón para ir al formulario de login -->
             <a href="{% url 'login' %}" class="btn btn-primary"> Ingresar </a>            
           </li>
+
+          {% if user.is_authenticated %}
+            <li class="nav-item">
+              <!-- Botón para ver la lista de las notas -->
+              <a href="{% url 'tablero:notas' %}" class="btn btn-primary"> Mis Notas </a>            
+            </li>
+          {% else %}
+            <li class="nav-item">
+              <!-- DARLE UNA ACCIÓN PA INDICAR QUE DEBE ESTAR LOGEADO -->
+              <a href="#" class="btn btn-dark"> Mis Notas </a>            
+            </li>
+          {% endif %}
+          
         </ul>
       </div>
 
     </div>
   </nav>
 </body>
-
 </html>

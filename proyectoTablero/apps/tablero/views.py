@@ -37,7 +37,9 @@ def editarNota(request, id):
             return redirect('notas')
     else:
         form = NotaForm(instance=nota)
-    return render(request, 'tablero/crear_nota.html', {'form': form})
+    return render(request, 'tablero/crear_nota.html', {'form': form, 'nota': nota})
+
+
 
 @login_required
 def eliminarNota(request, id):

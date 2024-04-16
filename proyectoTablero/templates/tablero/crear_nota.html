@@ -8,16 +8,16 @@
 
 {% block contenido %} 
     
-    <form method="POST">
-        {% csrf_token %}
-        {% if error %}
-            <h2>{{ error }}</h2>
-        {% endif %}
-        <label for="id_titulo">Titulo</label>
-    <input type="text" id="id_titulo" name="titulo" value="{{ nota_form.instance.titulo }}">
+<form method="POST">
+    {% csrf_token %}
+    {% if error %}
+        <h2>{{ error }}</h2>
+    {% endif %}
+    <label for="id_titulo">Titulo</label>
+    <input type="text" id="id_titulo" name="titulo" value="{{ nota.titulo }}">
     <label for="id_contenido">Contenido</label>
-    <input type="text" id="id_contenido" name="contenido" value="{{ nota_form.instance.contenido }}">
+    <input type="text" id="id_contenido" name="contenido" value="{{ nota.contenido }}">
     <button type="submit">Guardar cambios</button>
-        
-    </form>
+</form>
+
 {% endblock %}    
