@@ -1,0 +1,12 @@
+body.body {
+  max-width: 1350px;
+  /* Ancho maximo */
+  margin: auto;
+  /* Magen automatico */
+  min-height: 100vh;
+  /* Altura mínima de la ventana gráfica */
+  background-color: #022e6b ;
+  /* Fondo blanco */
+  color: #ffffff;
+  /* Texto gris oscuro */
+}

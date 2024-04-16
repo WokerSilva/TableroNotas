@@ -1,7 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
+<head>
+  <!-- Documento de estils CSS en la carpeta statc del proyecto -->
+  <link rel="stylesheet" href="{% static 'css/navbar/navbar.css'%}">
+</head>
 <html lang="es">
     <body>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
               <a class="navbar-brand" href="#">Navbar</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
