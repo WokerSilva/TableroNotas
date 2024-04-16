@@ -38,4 +38,10 @@
     {% endif %}
 
 
+   
+    <form action="{% url 'usuarios:logout' %}" method="post">  <!-- Agrega el namespace 'usuarios:' -->
+        {% csrf_token %}
+        <button type="submit">Salir de la sesión</button>
+    </form>
+    
 {% endblock %}
