@@ -8,7 +8,9 @@
 
 {% block contenido %} 
     
-    <h1>Esta es la pagina de las notas</h1>
+        
+    <h2>Esta es la pagina de las notas </h2>
+    
     {% if notas %}
     <table>
         <thead>
@@ -37,6 +39,8 @@
         <p> no hay registros </p>
     {% endif %}
 
+
+    <a href="{% url 'tablero:crear_nota' %}" class="btn btn-primary"> Crear Nota </a>            
 
    
     <form action="{% url 'usuarios:logout' %}" method="post">  <!-- Agrega el namespace 'usuarios:' -->

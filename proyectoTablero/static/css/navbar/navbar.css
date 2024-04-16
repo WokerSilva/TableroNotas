@@ -1,61 +1,34 @@
+/* General navbar */
 .navbar {
-  background-color: #011426; /* Fondo más oscuro */
+  background-color: #011426; 
   top: 0;
   width: 100%; 
   max-width: 1350px;
   height: 65px;
-  font-size: 22px; /* Tamaño de fuente */
+  font-size: 22px; 
 }
 
-.navbar-nav .nav-link {
-  color: #ffffff;
-  /* Texto blanco */
+/* TITULO DEL LOGO */
+.navbar-brand{
+  color: white;
 }
-
-.navbar-nav .nav-link.active {
-  color: #f16d0f;
-}
-
-.navbar-brand,
-.nav-link {
+.navbar-brand:hover{
   color: white;
 }
 
-.nav-item {
+/* Botones más separados */
+.navbar-nav .nav-item {
   color: white;
+  margin-left: 15px;
 }
 
-/* 
-  Ponemos la jerarquia del contenedor que contiene la imagen del logo  
-  */
-.Logo {
-  max-width: 58%;
-  /* La imagen se ajuste al ancho del navbar-brand */
-  height: auto;
-  /* Ajusta automáticamente la altura */
+/* Color para cuando el mouse pasa por el btn */
+.btn:hover {
+  background-color: orange;
 }
 
+/* ESTE ES EL COLOR DEL BOTÓN 
+   CUANDO LA PAGINA SE HACE MUY PEQUEÑA */
 .navbar-toggler {
   background-color: #E0E0E0;
-}
-
-/*
-  * Tamaño del icono del menú
-  */
-.user-dropdown,
-.cart-icon {
-  font-size: 25px;
-  color: white;
-  display: inline-block;
-  margin-right: 25px;
-  /* Agrega una separación de 10px entre los elementos */
-}
-
-.user-dropdown:hover {
-  color: orange;
-}
-
-.cart-icon:hover {
-  color: orange;
-}
-
+} 

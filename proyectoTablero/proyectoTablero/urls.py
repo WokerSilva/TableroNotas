@@ -24,5 +24,7 @@ urlpatterns = [
     path('home/', Home, name='index'),
     path('tablero/', include(('apps.tablero.urls','tablero'))),
     path('usuarios/', include(('apps.usuarios.urls','usuarios'))),
-    path('notas/', Notas, name='notas')
+    path('notas/', Notas, name='notas'),
+    path('usuarios/registro/', usuarios_views.registro, name='registro'),
+    path('usuarios/login/', usuarios_views.iniciar_sesion, name='login'),
 ]
