@@ -1,11 +1,13 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOTAS</title>
-</head>
-<body>
+{% extends "index.html" %}
+
+{% block titulo %} Notas {% endblock %} 
+
+    {% block home %} 
+    
+    {% endblock %}
+
+{% block contenido %} 
+    
     <h1>Esta es la pagina de las notas</h1>
     {% if notas %}
     <table>
@@ -34,5 +36,12 @@
     {% else %}
         <p> no hay registros </p>
     {% endif %}
-</body>
-</html>
+
+
+   
+    <form action="{% url 'usuarios:logout' %}" method="post">  <!-- Agrega el namespace 'usuarios:' -->
+        {% csrf_token %}
+        <button type="submit">Salir de la sesión</button>
+    </form>
+    
+{% endblock %}
