@@ -27,7 +27,7 @@ def crearNota(request):
         else:
             print("Form errors:", form.errors)
     else:
-        form = NotaForm()
+        form = NotaForm()        
     return render(request, 'tablero/crear_nota.html', {'form': form})
 
 

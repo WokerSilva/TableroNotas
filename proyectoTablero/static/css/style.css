@@ -1,0 +1,94 @@
+.card-red { background-color: #ff0000; }
+.card-green { background-color: #00ff00; }
+.card-blue { background-color: #0000ff; }
+
+/* General navbar */
+.navbar {
+  background-color: #C29C5F; 
+  top: 0;
+  width: 100%; 
+  max-width: 1350px;
+  height: 65px;
+  font-size: 22px; 
+}
+
+/* TITULO DEL LOGO */
+.navbar-brand{
+  color: white;
+}
+.navbar-brand:hover{
+  color: white;
+}
+
+
+.nav-item{  
+  /* Botones más separados */
+  margin-left: 15px;
+  border-radius: 5px;
+  background-color: #82BDF5;  
+}
+
+.nav-item a {
+  color: #ffffff; /* Color blanco */
+}
+
+
+.nav-item:hover{
+  background-color: #2e4458; 
+  color: white;
+}
+
+/* Color para cuando el mouse pasa por el btn */
+.btn:hover {
+  background-color: rgb(0, 255, 221);
+}
+
+/* ESTE ES EL COLOR DEL BOTÓN 
+   CUANDO LA PAGINA SE HACE MUY PEQUEÑA */
+.navbar-toggler {
+  background-color: #E0E0E0;
+} 
+
+
+
+body.body {
+  max-width: 1350px;
+  /* Ancho maximo */
+  margin: auto;
+  /* Magen automatico */
+  min-height: 100vh;
+  /* Altura mínima de la ventana gráfica 022e6b */
+  background-color: #dde6ee ; 
+  /* Fondo blanco */
+  color: #000000;
+  /* Texto gris oscuro */
+  padding-bottom: 80px;
+}
+
+
+.color-dynamic {
+  background-color: var(--card-color);
+}
+
+
+/* Contenedor principal del footer */
+
+/* Estilos para el footer 232D3E */
+footer.sticky-footer {
+  background-color: #C29C5F ; /* Fondo más oscuro */
+  color: #ffffff;
+  height: 65px;
+  /* Ancho maximo */  
+  position: fixed; /* Fija la posición del footer */
+  bottom: 0; /* Lo coloca al final de la ventana del navegador */
+  width: 100%; /* Ancho completo del footer */
+  max-width: 1350px; /* Ancho máximo específico */
+  left: 50%; /* Centra el footer horizontalmente */
+  transform: translateX(-50%); /* Ajusta la posición horizontal*/    
+}
+
+/* Estilo para el texto dentro del footer */
+footer.sticky-footer .copyright span {
+  font-size: 18px; /* Tamaño de fuente */
+  font-weight: 500; /* Grosor de fuente */
+}
