@@ -12,7 +12,7 @@ footer.sticky-footer {
   width: 100%; /* Ancho completo del footer */
   max-width: 1350px; /* Ancho máximo específico */
   left: 50%; /* Centra el footer horizontalmente */
-  transform: translateX(-50%); /* Ajusta la posición horizontal*/
+  transform: translateX(-50%); /* Ajusta la posición horizontal*/    
 }
 
 /* Estilo para el texto dentro del footer */

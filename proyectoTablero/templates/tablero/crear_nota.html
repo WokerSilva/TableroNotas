@@ -8,16 +8,35 @@
 
 {% block contenido %} 
     
-<form method="POST">
+<form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    {% if error %}
-        <h2>{{ error }}</h2>
+    {% if form.errors %}
+        <div class="alert alert-danger">
+            <strong>¡Error!</strong> Por favor, corrige los siguientes errores:
+            {{ form.errors }}
+        </div>
     {% endif %}
-    <label for="id_titulo">Titulo</label>
-    <input type="text" id="id_titulo" name="titulo" value="{{ nota.titulo }}">
-    <label for="id_contenido">Contenido</label>
-    <input type="text" id="id_contenido" name="contenido" value="{{ nota.contenido }}">
-    <button type="submit">Guardar cambios</button>
+    <div class="form-group">
+        <label for="id_titulo">Titulo:</label>
+        {{ form.titulo }}
+    </div>
+    <div class="form-group">
+        <label for="id_contenido">Contenido:</label>
+        {{ form.contenido }}
+    </div>
+    <div class="form-group">
+        <label for="id_imagen">Imagen:</label>
+        {{ form.imagen }}
+        {% if nota.imagen %}
+            <img src="{{ nota.imagen.url }}" alt="Imagen actual" height="100">
+        {% endif %}
+    </div>
+    <div class="form-group">
+        <label for="id_color">Color:</label>
+        {{ form.color }}
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar cambios</button>
 </form>
 
-{% endblock %}    
+    
+{% endblock %}

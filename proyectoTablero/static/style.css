@@ -4,9 +4,10 @@ body.body {
   margin: auto;
   /* Magen automatico */
   min-height: 100vh;
-  /* Altura mínima de la ventana gráfica */
-  background-color: #022e6b ;
+  /* Altura mínima de la ventana gráfica 022e6b */
+  background-color: #e7820d ; 
   /* Fondo blanco */
   color: #ffffff;
   /* Texto gris oscuro */
+  padding-bottom: 80px;
 }

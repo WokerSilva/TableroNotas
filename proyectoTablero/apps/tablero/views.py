@@ -17,24 +17,30 @@ def Notas(request):
 @login_required
 def crearNota(request):
     if request.method == "POST":
-        form = NotaForm(request.POST)
+        form = NotaForm(request.POST, request.FILES)
+        print("Form data:", form.data)
         if form.is_valid():
             nota = form.save(commit=False)
-            nota.usuario = request.user
+            nota.usuario = request.user            
             nota.save()
             return redirect('notas')
+        else:
+            print("Form errors:", form.errors)
     else:
         form = NotaForm()
     return render(request, 'tablero/crear_nota.html', {'form': form})
+
 
 @login_required
 def editarNota(request, id):
     nota = get_object_or_404(Nota, id=id, usuario=request.user)
     if request.method == 'POST':
-        form = NotaForm(request.POST, instance=nota)
+        form = NotaForm(request.POST, request.FILES, instance=nota)
         if form.is_valid():
             form.save()
             return redirect('notas')
+        else:
+            print("Formulario no válido:", form.errors)  # Impresión de depuración
     else:
         form = NotaForm(instance=nota)
     return render(request, 'tablero/crear_nota.html', {'form': form, 'nota': nota})
