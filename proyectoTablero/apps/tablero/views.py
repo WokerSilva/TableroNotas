@@ -21,6 +21,8 @@ def crearNota(request):
         if form.is_valid():
             nota = form.save(commit=False)
             nota.usuario = request.user
+            nota.imagen = form.cleaned_data['imagen']
+            nota.color = form.cleaned_data['color']
             nota.save()
             return redirect('notas')
     else:
@@ -33,6 +35,8 @@ def editarNota(request, id):
     if request.method == 'POST':
         form = NotaForm(request.POST, instance=nota)
         if form.is_valid():
+            nota.imagen = form.cleaned_data['imagen']
+            nota.color = form.cleaned_data['color']
             form.save()
             return redirect('notas')
     else:

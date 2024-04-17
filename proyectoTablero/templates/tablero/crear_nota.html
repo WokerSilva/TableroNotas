@@ -8,16 +8,26 @@
 
 {% block contenido %} 
     
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">  <!-- Agregar enctype para manejar archivos -->
         {% csrf_token %}
         {% if error %}
             <h2>{{ error }}</h2>
         {% endif %}
         <label for="id_titulo">Titulo</label>
-    <input type="text" id="id_titulo" name="titulo" value="{{ nota_form.instance.titulo }}">
-    <label for="id_contenido">Contenido</label>
-    <input type="text" id="id_contenido" name="contenido" value="{{ nota_form.instance.contenido }}">
-    <button type="submit">Guardar cambios</button>
-        
+        <input type="text" id="id_titulo" name="titulo" value="{{ nota_form.instance.titulo }}">
+        <label for="id_contenido">Contenido</label>
+        <input type="text" id="id_contenido" name="contenido" value="{{ nota_form.instance.contenido }}">
+        <!-- Campo para la imagen -->
+        <label for="id_imagen">Imagen</label>
+        <input type="file" id="id_imagen" name="imagen">
+        <!-- Campo para el color -->
+        <label for="id_color">Color</label>
+        <select id="id_color" name="color">
+            {% for color, nombre_color in nota_form.fields.color.choices %}
+                <option value="{{ color }}" {% if nota_form.instance.color == color %}selected{% endif %}>{{ nombre_color }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Guardar cambios</button>
     </form>
-{% endblock %}    
+    
+{% endblock %}
