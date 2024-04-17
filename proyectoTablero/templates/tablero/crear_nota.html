@@ -1,20 +1,20 @@
 {% extends "index.html" %}
 
-{% block titulo %} Editar Nota {% endblock %} 
+{% block titulo %} Editar Nota {% endblock %}
 
-{% block home %} 
-    
+{% block home %}
+
 {% endblock %}
 
-{% block contenido %} 
-    
+{% block contenido %}
+
 <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {% if form.errors %}
-        <div class="alert alert-danger">
-            <strong>¡Error!</strong> Por favor, corrige los siguientes errores:
-            {{ form.errors }}
-        </div>
+    <div class="alert alert-danger">
+        <strong>¡Error!</strong> Por favor, corrige los siguientes errores:
+        {{ form.errors }}
+    </div>
     {% endif %}
     <div class="form-group">
         <label for="id_titulo">Titulo:</label>
@@ -28,7 +28,7 @@
         <label for="id_imagen">Imagen:</label>
         {{ form.imagen }}
         {% if nota.imagen %}
-            <img src="{{ nota.imagen.url }}" alt="Imagen actual" height="100">
+        <img src="{{ nota.imagen.url }}" alt="Imagen actual" height="100">
         {% endif %}
     </div>
     <div class="form-group">
@@ -38,5 +38,5 @@
     <button type="submit" class="btn btn-primary">Guardar cambios</button>
 </form>
 
-    
+
 {% endblock %}
