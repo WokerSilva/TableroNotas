@@ -1,6 +1,5 @@
 from django.contrib.auth import logout as django_logout
 from django.shortcuts import render, redirect
-from django.contrib.auth import logout
 from .forms import CustomUserCreationForm
 from django.contrib.auth import login, authenticate
 from .forms import CustomUserCreationForm, CustomAuthenticationForm

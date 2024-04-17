@@ -1,47 +1,54 @@
 {% extends "index.html" %}
 
-{% block titulo %} Notas {% endblock %} 
+{% block titulo %} Notas {% endblock %}
 
-    {% block home %} 
-    
-    {% endblock %}
+{% block home %}
 
-{% block contenido %} 
-    
-    <h1>Esta es la pagina de las notas</h1>
-    {% if notas %}
-    <table>
-        <thead>
-            <tr>
-                <th> # </th>
-                <th> Titulo </th>
-                <th> Contenido </th>
-                <th> Opciones </th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for nota in notas %}
-            <tr>
-                <td> {{nota.id}} </td>
-                <td> {{nota.titulo}} </td>
-                <td> {{nota.contenido}} </td>
-                <td>
-                     <a href="{% url 'tablero:editar_nota' nota.id %}"> EDITAR </a> 
-                     <a href="{% url 'tablero:eliminar_nota' nota.id %}"> ELIMINAR </a> 
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    {% else %}
-        <p> no hay registros </p>
-    {% endif %}
+{% endblock %}
+
+{% block contenido %}
 
 
-   
-    <form action="{% url 'usuarios:logout' %}" method="post">  <!-- Agrega el namespace 'usuarios:' -->
-        {% csrf_token %}
-        <button type="submit">Salir de la sesión</button>
-    </form>
-    
+<h2>Esta es la pagina de las notas </h2>
+<a href="{% url 'tablero:crear_nota' %}" class="btn btn-primary"> Crear Nota </a>
+
+<form action="{% url 'usuarios:logout' %}" method="post"> <!-- Agrega el namespace 'usuarios:' -->
+    {% csrf_token %}
+    <button type="submit">Salir de la sesión</button>
+</form>
+
+{% if notas %}
+<div class="row">
+    {% for nota in notas %}
+    <div class="col-md-4 mb-4">
+        <!-- Aquí aplicamos el color de fondo usando el valor de 'color' de la nota
+             posiblemente en el editor de textos marque dos errores no mover porfavor -->
+        <div class="card" style="background-color: {{ nota.color }}" id="card-{{ nota.id }}">
+            
+            {% if nota.imagen %}
+            <img src="{{ nota.imagen.url }}" class="card-img-top" alt="Imagen de la nota">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ nota.titulo }}</h5>
+                <p class="card-text">{{ nota.contenido }}</p>
+                <!-- Botones de opciones -->
+                <div class="text-center">
+                    <a href="{% url 'tablero:editar_nota' nota.id %}" class="btn btn-primary">Editar</a>
+                    <!-- Formulario de eliminación -->
+                    <form action="{% url 'tablero:eliminar_nota' nota.id %}" method="post" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
+                </div>
+                <!-- Botones de opciones -->
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<p>No hay notas disponibles.</p>
+{% endif %}
+
+
 {% endblock %}

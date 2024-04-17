@@ -13,7 +13,9 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib.auth import views as auth_views
+
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 from apps.tablero.views import Home, Notas
@@ -24,5 +26,7 @@ urlpatterns = [
     path('home/', Home, name='index'),
     path('tablero/', include(('apps.tablero.urls','tablero'))),
     path('usuarios/', include(('apps.usuarios.urls','usuarios'))),
-    path('notas/', Notas, name='notas')
-]
+    path('notas/', Notas, name='notas'),
+    path('usuarios/registro/', usuarios_views.registro, name='registro'),
+    path('usuarios/login/', usuarios_views.iniciar_sesion, name='login'),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
