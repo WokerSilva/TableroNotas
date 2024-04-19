@@ -6,14 +6,65 @@
 
 {% endblock %}
 
-{% block contenido %} 
+{% block contenido %}
+<!-- Section: Design Block -->
+<section class="">
+    <!-- Jumbotron -->
+    <div class="px-4 py-5 px-md-5 text-center text-lg-start" style="background-color: hsl(0, 0%, 96%)">
+        <div class="container">
+            <div class="row gx-lg-5 align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <h1 class="my-5 display-3 fw-bold ls-tight">
+                        Iniciar Sesión <br />
+                        <span class="text-primary">Ingresa tus datos</span>
+                    </h1>
+                    <p style="color: hsl(217, 10%, 50.8%)">
+                        Por favor, ingresa tu nombre de usuario y contraseña para iniciar sesión.
+                    </p>
+                </div>
 
-<h1>Iniciar Sesión</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Iniciar Sesión</button>
-</form>
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <div class="card">
+                        <div class="card-body py-5 px-md-5">
+                            <form method="post">
+                                {% csrf_token %}
+                                <!-- Nombre de Usuario -->
+                                <div class="row mb-4">
+                                    <div class="col-md-12">
+                                        <div data-mdb-input-init class="form-outline">
+                                            <input type="text" id="id_username" name="username" class="form-control"
+                                                value="{{ form.username.value }}" required>
+                                            <label class="form-label" for="id_username">Nombre de Usuario</label>
+                                        </div>
+                                    </div>
+                                </div>
 
+                                <!-- Contraseña -->
+                                <div class="row mb-4">
+                                    <div class="col-md-12">
+                                        <div data-mdb-input-init class="form-outline">
+                                            <input type="password" id="id_password" name="password" class="form-control"
+                                                required>
+                                            <label class="form-label" for="id_password">Contraseña</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Botón de Iniciar Sesión -->
+                                <div class="text-center">
+                                    <button type="submit" data-mdb-button-init data-mdb-ripple-init
+                                        class="btn btn-primary btn-block mb-4">
+                                        Iniciar Sesión
+                                    </button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</section>
 
 {% endblock %}
