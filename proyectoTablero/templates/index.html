@@ -28,51 +28,74 @@
     <!-- Navbar de la pagina -->
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"> PUMA NOTAS </a>
+            <a class="navbar-brand" href="#">PUMA NOTAS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
+    
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
                 <ul class="navbar-nav">
-                    <!-- Botón para ir a la pagina principal -->
+                    <!-- Botón para ir a la página principal -->
                     <li class="nav-item">
-                        <a href="{% url 'index' %}" class="btn"> Inicio </a>
+                        <a href="{% url 'index' %}" class="btn">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <!-- Botón para ir al formulario de registro -->
-                        <a href="{% url 'registro' %}" class="btn"> Registrarse </a>
+                        <!-- Botón para ver la lista de las notas -->
+                        <a href="{% url 'tablero:notas' %}" class="btn">Mis Notas</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <!-- Botón para ir al formulario de registro -->
+                    <li class="nav-item">
+                        <a href="{% url 'registro' %}" class="btn">Registrarse</a>
                     </li>
                     <li class="nav-item">
                         <!-- Botón para ir al formulario de login -->
-                        <a href="{% url 'login' %}" class="btn letra"> Ingresar </a>
+                        <a href="{% url 'login' %}" class="btn letra">Ingresar</a>
                     </li>
-
-                    {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <!-- Botón para ver la lista de las notas -->
-                        <a href="{% url 'tablero:notas' %}" class="btn"> Mis Notas </a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <!-- DARLE UNA ACCIÓN PA INDICAR QUE DEBE ESTAR LOGEADO -->
-                        <a href="#" class="btn" style="background-color: black; color: aliceblue;"> Mis Notas </a>
-                    </li>
-                    {% endif %}
-
                 </ul>
             </div>
-
         </div>
     </nav>
+    
     <!-- Navbar de la pagina -->
 
 
 
     {% block home %}
 
-    PAGINA INICIAL
+    <div class="main-content">
+
+        <div class="titulo">
+            <h1> Bienvenido </h1>
+            <p>Contenido principal aquí...</p>
+        </div>
+
+        <section id="services" class="services">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Servicios</h2>
+                    <!-- <h3 class="section-subheading text-muted"> Explora nuestos servicios </h3> -->
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-6">
+                        <img src="https://cdn.glitch.global/91ae3d40-32a1-4ba3-90a8-0e817f46baf3/almacenamiento.png?v=1713480921841" alt="Imagen de Almacenamiento" class="img-fluid">
+                        <h4 class="my-3"> Almacenamiento </h4>
+                        <p class="text-muted"> Guarda tus notas y accede desde cuaquier dispositivo a ellas </p>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="https://cdn.glitch.global/91ae3d40-32a1-4ba3-90a8-0e817f46baf3/seguridad.png?v=1713480914732" alt="Imagen de Almacenamiento" class="img-fluid">
+                        <h4 class="my-3"> Seguridad </h4>
+                        <p class="text-muted"> Nuestro almacenamiento en la nube simpre tendrá seguras tus notas </p>
+                    </div>                    
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
 
 
     {% endblock %}

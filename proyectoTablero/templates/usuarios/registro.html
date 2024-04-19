@@ -1,5 +1,6 @@
 {% extends "index.html" %}
 
+
 {% block titulo %} Registro {% endblock %}
 
 {% block home %}
@@ -7,10 +8,35 @@
 {% endblock %}
 
 {% block contenido %} 
-<h1>Registro de Usuario</h1>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Registrarse</button>
-</form>
+<h1 class="my-5 display-3 fw-bold ls-tight custom-title">
+    Registro de Usuario
+  </h1>
+  <form method="post" class="custom-form">
+      {% csrf_token %}
+      <!-- Campo de nombre de usuario -->
+      <div class="form-group">
+          <label for="id_username">Nombre de usuario:</label>
+          {{ form.username }}
+      </div>
+      <!-- Campo de correo electrónico -->
+      <div class="form-group">
+          <label for="id_email">Correo electrónico:</label>
+          {{ form.email }}
+      </div>
+      <!-- Campo de contraseña -->
+      <div class="form-group">
+          <label for="id_password1">Contraseña:</label>
+          {{ form.password1 }}
+      </div>
+      <!-- Campo de confirmación de contraseña -->
+      <div class="form-group">
+          <label for="id_password2">Confirmar contraseña:</label>
+          {{ form.password2 }}
+      </div>
+      <!-- Botón de registro -->
+      <button type="submit" class="btn btn-primary btn-block mb-4 custom-button">
+        Registrarse
+      </button>
+  </form>
+  
 {% endblock %}

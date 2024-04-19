@@ -1,0 +1,111 @@
+body.body {
+  max-width: 1390px;
+  /* Ancho maximo */
+  margin: auto;
+  /* Magen automatico */
+  min-height: 100vh;
+  /* Altura mínima de la ventana gráfica 022e6b */
+  background-color: #dde6ee ; 
+  /* Fondo blanco */
+  color: #000000;
+  /* Texto gris oscuro padding-bottom: 10px; */
+
+  padding-bottom: 10px;
+}
+
+
+.main-content {
+  height: 100vh; /* Altura del 100% de la ventana */
+  background-image: url('https://cdn.glitch.global/91ae3d40-32a1-4ba3-90a8-0e817f46baf3/pexels-david-bares-42311-204511.jpg?v=1713479566084');
+  background-size: cover; /* Cubre todo el contenido */
+  background-color: rgba(255, 255, 255, 0.5);
+  background-position: center; /* Centra la imagen */
+  color: white; /* Color del texto */  
+}
+
+.img-fluid{
+  width: 150px;
+  height: auto;
+  
+}
+
+
+/* General navbar */ /* General navbar */ /* General navbar */ /* General navbar */ 
+/* General navbar */ /* General navbar */ /* General navbar */ /* General navbar */ 
+/* General navbar */ /* General navbar */ /* General navbar */ /* General navbar */ 
+/* General navbar */ /* General navbar */ /* General navbar */ /* General navbar */ 
+.navbar {
+  background-color: #C29C5F; 
+  top: 0;
+  width: 100%; 
+  max-width: 1390px;
+  height: 85px;
+  font-size: 22px; 
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/* TITULO DEL LOGO */
+.navbar-brand{
+  color: white;  
+}
+.navbar-brand:hover{
+  color: white;
+}
+
+
+.nav-item{  
+  /* Botones más separados */
+  margin-left: 15px;
+  border-radius: 5px;
+  background-color: #82BDF5;  
+}
+
+.nav-item a {
+  color: #ffffff; /* Color blanco */
+  font-size: 20px;
+}
+
+
+.nav-item:hover{
+  background-color: #2e4458; 
+  color: white;
+}
+
+/* Color para cuando el mouse pasa por el btn */
+.btn:hover {
+  background-color: rgb(0, 255, 221);
+}
+
+/* ESTE ES EL COLOR DEL BOTÓN 
+   CUANDO LA PAGINA SE HACE MUY PEQUEÑA */
+.navbar-toggler {
+  background-color: #E0E0E0;
+} 
+
+
+
+/* Contenedor principal del footer */ /* Contenedor principal del footer */ /* Contenedor principal del footer */
+/* Contenedor principal del footer */ /* Contenedor principal del footer */ /* Contenedor principal del footer */
+/* Contenedor principal del footer */ /* Contenedor principal del footer */ /* Contenedor principal del footer */
+
+/* Estilos para el footer 232D3E */
+footer.sticky-footer {
+  background-color: #C29C5F ; /* Fondo más oscuro */
+  color: #ffffff;
+  height: 65px;    
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  position: fixed; /* Fija la posición del footer */
+  bottom: 0; /* Lo coloca al final de la ventana del navegador */
+  width: 100%; /* Ancho completo del footer */
+  max-width: 1390px; /* Ancho máximo específico */
+  left: 50%; /* Centra el footer horizontalmente */
+  transform: translateX(-50%); /* Ajusta la posición horizontal*/    
+}
+
+/* Estilo para el texto dentro del footer */
+footer.sticky-footer .copyright span {
+  font-size: 18px; /* Tamaño de fuente */
+  font-weight: 500; /* Grosor de fuente */
+}
