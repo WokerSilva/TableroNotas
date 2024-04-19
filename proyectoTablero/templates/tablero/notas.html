@@ -23,7 +23,7 @@
     <div class="col-md-4 mb-4">
         <!-- Aquí aplicamos el color de fondo usando el valor de 'color' de la nota
              posiblemente en el editor de textos marque dos errores no mover porfavor -->
-        <div class="card" style="background-color: {{ nota.color }}" id="card-{{ nota.id }}">
+        <div class="card-notas" style="background-color: {{ nota.color }}" id="card-{{ nota.id }}">
             
             {% if nota.imagen %}
             <img src="{{ nota.imagen.url }}" class="card-img-top" alt="Imagen de la nota">
