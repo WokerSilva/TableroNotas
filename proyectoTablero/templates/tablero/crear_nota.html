@@ -8,35 +8,61 @@
 
 {% block contenido %}
 
-<form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    {% if form.errors %}
-    <div class="alert alert-danger">
-        <strong>¡Error!</strong> Por favor, corrige los siguientes errores:
-        {{ form.errors }}
-    </div>
-    {% endif %}
-    <div class="form-group">
-        <label for="id_titulo">Titulo:</label>
-        {{ form.titulo }}
-    </div>
-    <div class="form-group">
-        <label for="id_contenido">Contenido:</label>
-        {{ form.contenido }}
-    </div>
-    <div class="form-group">
-        <label for="id_imagen">Imagen:</label>
-        {{ form.imagen }}
-        {% if nota.imagen %}
-        <img src="{{ nota.imagen.url }}" alt="Imagen actual" height="100">
-        {% endif %}
-    </div>
-    <div class="form-group">
-        <label for="id_color">Color:</label>
-        {{ form.color }}
-    </div>
-    <button type="submit" class="btn btn-primary">Guardar cambios</button>
-</form>
+<div class="col-lg-12 d-flex align-items-center justify-content-center">
+    <h1 class="my-5 display-4 fw-bold ls-tight text-center">
+      Agregar Nota <br />
+    </h1>
+  </div>
+  
 
+<div class="card">
+    <div class="card-body py-5 px-md-5">
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% if form.errors %}
+          <div class="alert alert-danger">
+            <strong>¡Error!</strong> Por favor, corrige los siguientes errores:
+            {{ form.errors }}
+          </div>
+        {% endif %}
+  
+        <div class="row">
+            <div class="col-lg-6">
+              <!-- Contenido de la columna izquierda -->
+              <div class="form-group text-center align-items-center d-flex flex-column">
+                <label for="id_titulo">Titulo:</label>
+                {{ form.titulo }}
+              </div>
+              <div class="form-group text-center align-items-center d-flex flex-column">
+                <label for="id_contenido">Contenido:</label>
+                {{ form.contenido }}
+              </div>
+            </div>
+          
+            <div class="col-lg-6 mb-4">
+                <!-- Contenido de la columna derecha -->
+                <div class="div-img form-group text-center align-items-center d-flex flex-column mx-auto">
+                  <label for="id_imagen">Imagen:</label>
+                  {{ form.imagen }}
+                  {% if nota.imagen %}
+                    <img src="{{ nota.imagen.url }}" alt="Imagen actual" height="100">
+                  {% endif %}
+                </div>
+                <div class="form-group text-center align-items-center d-flex flex-column mx-auto">
+                  <label for="id_color">Color:</label>
+                  {{ form.color }}
+                </div>
+              </div>
+              
+          </div>
+          
+           
+        <div class="save-cambios d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary">Guardar cambios</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
 
 {% endblock %}

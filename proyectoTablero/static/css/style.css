@@ -7,9 +7,11 @@
   background-color: #C29C5F; 
   top: 0;
   width: 100%; 
-  max-width: 1350px;
-  height: 65px;
+  max-width: 1250px;
+  height: 70px;
   font-size: 22px; 
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 /* TITULO DEL LOGO */
@@ -50,21 +52,52 @@
 } 
 
 
-
 body.body {
-  max-width: 1350px;
+  justify-content: center;
+  max-width: 1250px;
   /* Ancho maximo */
   margin: auto;
   /* Magen automatico */
   min-height: 100vh;
   /* Altura mínima de la ventana gráfica 022e6b */
-  background-color: #dde6ee ; 
+  background-color: #ffffff ; 
   /* Fondo blanco */
   color: #000000;
   /* Texto gris oscuro */
   padding-bottom: 80px;
+  overflow-x: hidden;
+  min-height: 100vh;
+  min-width: 100vh;
 }
 
+
+.main-content {
+  height: 20vh; 
+  background-image: url('https://cdn.glitch.global/91ae3d40-32a1-4ba3-90a8-0e817f46baf3/notes.jpg?v=1713532488708');
+  background-size: cover;   
+  background-color: rgba(255, 255, 255, 0.8);
+  background-position: center; 
+  color: white; 
+  padding: 100px;
+  margin-top: 0px;     
+}
+
+
+.img-fluid{
+  width: 150px;
+  height: auto;  
+}
+
+.titulo{
+    text-align: center;
+    margin-top: -10px;     
+}
+
+
+.services{
+  margin-top: 40px;
+  color:#000000;  
+}
 
 
 /* Contenedor principal del footer */
@@ -78,9 +111,11 @@ footer.sticky-footer {
   position: fixed; /* Fija la posición del footer */
   bottom: 0; /* Lo coloca al final de la ventana del navegador */
   width: 100%; /* Ancho completo del footer */
-  max-width: 1350px; /* Ancho máximo específico */
+  max-width: 1250px; /* Ancho máximo específico */
   left: 50%; /* Centra el footer horizontalmente */
   transform: translateX(-50%); /* Ajusta la posición horizontal*/    
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 /* Estilo para el texto dentro del footer */
