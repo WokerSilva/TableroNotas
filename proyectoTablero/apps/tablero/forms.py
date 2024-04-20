@@ -7,9 +7,9 @@ class NotaForm(forms.ModelForm):
     
     # Campo para el color
     COLORES = [
-        ('#ff0000', 'Rojo'),  
-        ('#00ff00', 'Verde'),  
-        ('#0000ff', 'Azul'),  
+        ('#EA9E19', 'Amarillo'),  
+        ('#54ea19', 'Verde'), 
+        ('#19b6ea', 'Azul'),  
     ]
     color = forms.ChoiceField(choices=COLORES, initial='#ffffff')
 

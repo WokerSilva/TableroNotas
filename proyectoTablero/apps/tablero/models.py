@@ -8,9 +8,9 @@ class Nota(models.Model):
     contenido = models.TextField(blank=False, null=False)
     imagen = models.ImageField(upload_to='notas_imagenes/', null=True, blank=True)
     COLORES = [
-        ('#ff0000', 'Rojo'),  
-        ('#00ff00', 'Verde'), 
-        ('#0000ff', 'Azul'),  
+        ('#EA9E19', 'Amarillo'),  
+        ('#54ea19', 'Verde'), 
+        ('#19b6ea', 'Azul'),  
     ]
     color = models.CharField(max_length=20, choices=COLORES, default='#ffffff', null=True, blank=True)
 
