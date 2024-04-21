@@ -10,21 +10,15 @@
 
 
 <div class="container">
-    <div class="row justify-content-center mt-4">
-        <div class="col-md-4 text-left"> <!-- Columna para el texto a la izquierda -->
+    <div class="row justify-content-around mt-4">
+        <div class="col-md-8 text-left"> <!-- Columna para el texto a la izquierda -->
           <h2 class="my-8">Aquí están tus notas</h2>
         </div>
         <div class="col-md-4 text-center mt-4"> <!-- Columna para el enlace "Crear Nota" en el medio -->
           <a href="{% url 'tablero:crear_nota' %}" class="btn btn-primary">Crear Nota</a>
-        </div>
-        <div class="col-md-4 text-right"> <!-- Columna para el botón "Salir" a la derecha -->
-          <form action="{% url 'usuarios:logout' %}" method="post"> <!-- Agrega el namespace 'usuarios:' -->
-            {% csrf_token %}
-            <button type="submit" class="btn btn-secondary my-4">Salir de la sesión</button>
-          </form>
-        </div>
-      </div>
-      
+        </div>        
+    </div>    
+    
   
     {% if notas %}
     <div class="row justify-content-center">
@@ -54,7 +48,7 @@
         {% endfor %}
     </div>
     {% else %}
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mt-4">
       <div class="col-md-6">
         <p class="text-center">No hay notas disponibles.</p>
       </div>
