@@ -3,108 +3,113 @@
 
 {% block titulo %} Registro {% endblock %}
 
-    {% block home %}
+{% block home %}
 
-    {% endblock %}
+{% endblock %}
 
-    
-{% block contenido %} 
+
+{% block contenido %}
 
 <section class="registrarse">
-    <div class="px-4 py-5 px-md-5 text-center text-lg-start min-vh-100" style="background-color: hsl(0, 0%, 96%)">
-      <div class="container">
-        <div class="row gx-lg-5 align-items-center">
-          <div class="col-lg-6 mb-5 mb-lg-0">
-            <h1 class="my-5 display-3 fw-bold ls-tight">
-              Registro de Usuario <br />
-              <span class="text-primary">Completa tus datos</span>
-            </h1>
-            <p style="color: hsl(217, 10%, 50.8%)">
-              Por favor, ingresa la siguiente información para registrarte.
-            </p>
-          </div>
-  
-          <div class="col-lg-6 mb-5 mb-lg-0">
-            <div class="card">
-              <div class="card-body py-5 px-md-5">
-                <form method="post">
-                  {% csrf_token %}
-                  <!-- Nombre de Usuario -->
-                  <div class="row mb-4">
-                    <div class="col-md-12">
-                      <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="id_username" name="username" class="form-control" value="{{ form.username.value }}" required>
-                        <label class="form-label" for="id_username">Nombre de Usuario</label>
-                      </div>
+  <div class="px-4 py-5 px-md-5 text-center text-lg-start min-vh-100" style="background-color: hsl(0, 0%, 96%)">
+    <div class="container">
+      <div class="row gx-lg-5 align-items-center">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <h1 class="my-5 display-3 fw-bold ls-tight">
+            Registro de Usuario <br />
+            <span class="text-primary">Completa tus datos</span>
+          </h1>
+          <p style="color: hsl(217, 10%, 50.8%)">
+            Por favor, ingresa la siguiente información para registrarte.
+          </p>
+        </div>
+
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <div class="card">
+            <div class="card-body py-5 px-md-5">
+              <form method="post">
+                {% csrf_token %}
+                <!-- Nombre de Usuario -->
+                <div class="row mb-4">
+                  <div class="col-md-12">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="text" id="id_username" name="username" class="form-control"
+                        value="{{ form.username.value }}" required>
+                      <label class="form-label" for="id_username">Nombre de Usuario</label>
                     </div>
                   </div>
-  
-                  <!-- Nombre -->
-                  <div class="row mb-4">
-                    <div class="col-md-6">
-                      <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="id_nombre" name="nombre" class="form-control" value="{{ form.nombre.value }}" required>
-                        <label class="form-label" for="id_nombre">Nombre</label>
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div data-mdb-input-init class="form-outline">
-                        <input type="text" id="id_apellido" name="apellido" class="form-control" value="{{ form.apellido.value }}" required>
-                        <label class="form-label" for="id_apellido">Apellido</label>
-                      </div>
+                </div>
+
+                <!-- Nombre -->
+                <div class="row mb-4">
+                  <div class="col-md-6">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="text" id="id_nombre" name="nombre" class="form-control"
+                        value="{{ form.nombre.value }}" required>
+                      <label class="form-label" for="id_nombre">Nombre</label>
                     </div>
                   </div>
-  
-                  <!-- Fecha de Nacimiento -->
-                  <div class="row mb-4">
-                    <div class="col-md-12">
-                      <div data-mdb-input-init class="form-outline">
-                        <input type="date" id="id_fecha_nacimiento" name="fecha_nacimiento" class="form-control" value="{{ form.fecha_nacimiento.value }}">
-                        <label class="form-label" for="id_fecha_nacimiento">Fecha de Nacimiento</label>
-                      </div>
+                  <div class="col-md-6">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="text" id="id_apellido" name="apellido" class="form-control"
+                        value="{{ form.apellido.value }}" required>
+                      <label class="form-label" for="id_apellido">Apellido</label>
                     </div>
                   </div>
-  
-                  <!-- Email -->
-                  <div class="row mb-4">
-                    <div class="col-md-12">
-                      <div data-mdb-input-init class="form-outline">
-                        <input type="email" id="id_email" name="email" class="form-control" value="{{ form.email.value }}" required>
-                        <label class="form-label" for="id_email">Correo Electrónico</label>
-                      </div>
+                </div>
+
+                <!-- Fecha de Nacimiento -->
+                <div class="row mb-4">
+                  <div class="col-md-12">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="date" id="id_fecha_nacimiento" name="fecha_nacimiento" class="form-control"
+                        value="{{ form.fecha_nacimiento.value }}">
+                      <label class="form-label" for="id_fecha_nacimiento">Fecha de Nacimiento</label>
                     </div>
                   </div>
-  
-                  <!-- Contraseña -->
-                  <div class="row mb-4">
-                    <div class="col-md-6">
-                      <div data-mdb-input-init class="form-outline">
-                        <input type="password" id="id_password1" name="password1" class="form-control" required>
-                        <label class="form-label" for="id_password1">Contraseña</label>
-                      </div>
+                </div>
+
+                <!-- Email -->
+                <div class="row mb-4">
+                  <div class="col-md-12">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="email" id="id_email" name="email" class="form-control" value="{{ form.email.value }}"
+                        required>
+                      <label class="form-label" for="id_email">Correo Electrónico</label>
                     </div>
-                    <div class="col-md-6">
-                      <div data-mdb-input-init class="form-outline">
-                        <input type="password" id="id_password2" name="password2" class="form-control" required>
-                        <label class="form-label" for="id_password2">Confirmar Contraseña</label>
-                      </div>
+                  </div>
+                </div>
+
+                <!-- Contraseña -->
+                <div class="row mb-4">
+                  <div class="col-md-6">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="password" id="id_password1" name="password1" class="form-control" required>
+                      <label class="form-label" for="id_password1">Contraseña</label>
                     </div>
-                  </div>                      
-                  <!-- Botón de Registro -->
-                  <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">
-                    Registrarse
-                  </button>                    
-                </form>
-              </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="password" id="id_password2" name="password2" class="form-control" required>
+                      <label class="form-label" for="id_password2">Confirmar Contraseña</label>
+                    </div>
+                  </div>
+                </div>
+                <!-- Botón de Registro -->
+                <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">
+                  Registrarse
+                </button>
+              </form>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
-
-  <div class="pueba">
-    fadfasdfasdf
   </div>
-  
+</section>
+
+<div class="pueba">
+  fadfasdfasdf
+</div>
+
 {% endblock %}

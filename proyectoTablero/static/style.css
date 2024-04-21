@@ -21,7 +21,8 @@
   /* Botones más separados */
   margin-left: 15px;
   border-radius: 5px;
-  background-color: #e09214;  
+  background-color: #e09214;    
+  padding: 5px 10px;
 }
 
 .nav-item a {
@@ -35,11 +36,11 @@
 }
 
 .btn{
-  background-color: #0784cd;   
+  background-color: #0784cd;       
 }
 
 .icon-color{
-  color: #e09214;
+  color: #ffffff;
 }
 
 .dropdown-toggle::after {
@@ -113,9 +114,9 @@ body.body {
 
 .jumbotron {
   height: 100vh; 
-  background-color: hsl(0, 0%, 98%); /* Color del jumbotron */  
+  background-color: hsl(0, 0%, 98%);
   margin-top: 50px;
-  height: calc(100vh - 100px); /* 100vh menos el alto del navbar */  
+  height: calc(100vh - 100px); 
 }
 
 
