@@ -31,3 +31,5 @@ Dentro de la rama main esta la carpeta creada con django proyectoTablero. Desde 
 ```
   http://127.0.0.1:8000/home
 ```
+
+La documentación es el pdf en la raiz del proyecto
