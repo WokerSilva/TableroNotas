@@ -2,10 +2,11 @@
 .vscode
 
 ## Ignorar los archivos generados por la compilación de LaTex en la Documentacion
-Documentacion/main.aux
-Documentacion/main.bbl
-Documentacion/main.bcf
-Documentacion/main.blg
-Documentacion/main.log
-Documentacion/main.out
-Documentacion/main.run.xml
+Documentacion/latexmain.aux
+Documentacion/latexmain.bbl
+Documentacion/latexmain.bcf
+Documentacion/latexmain.blg
+Documentacion/latexmain.log
+Documentacion/latexmain.out
+Documentacion/latexmain.run.xml
+Documentacion/latexmain.toc
