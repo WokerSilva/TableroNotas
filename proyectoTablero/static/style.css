@@ -1,0 +1,170 @@
+/* General navbar */
+.navbar {
+  background-color: #0784cd; 
+  top: 0;
+  width: 100%; 
+  max-width: 1250px;
+  height: 110px;
+  font-size: 22px; 
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;    
+  color: #ffffff;
+}
+
+.navbar-brand img {
+  max-height: 95px; 
+  height: auto;
+  margin-right: 10px; 
+}
+
+.nav-item{  
+  /* Botones más separados */
+  margin-left: 15px;
+  border-radius: 5px;
+  background-color: #e09214;    
+  padding: 5px 10px;
+}
+
+.nav-item a {
+  color: #ffffff; /* Color blanco */
+}
+
+
+.nav-item:hover{
+  background-color: #e85714; 
+  color: white;
+}
+
+.btn{
+  background-color: #0784cd;       
+}
+
+.icon-color{
+  color: #ffffff;
+}
+
+.dropdown-toggle::after {
+  color: #0784cd;   
+}
+
+
+.dropdown-item {  
+  font-weight: bold; 
+  font-size: 18px;
+}
+
+/* ESTE ES EL COLOR DEL BOTÓN 
+   CUANDO LA PAGINA SE HACE MUY PEQUEÑA */
+.navbar-toggler {
+  background-color: #E0E0E0;
+} 
+
+
+
+
+body.body {  
+  max-width: 1250px;
+  /* Ancho maximo */
+  margin: auto;
+  /* Magen automatico */
+  min-height: 100vh;
+  /* Altura mínima de la ventana gráfica 022e6b */
+  background-color: #ffffff ; 
+  /* Fondo blanco */
+  color: #000000;
+  /* Texto gris oscuro 
+  padding-bottom: 80px;*/
+  overflow-x: hidden;
+  min-height: 100vh;
+  min-width: 100vh;
+}
+
+.img-fluid{
+  width: 130px;
+  height: auto;  
+}
+
+.titulo{
+    text-align: center;
+    margin-top: -50px;     
+    color: #000000;
+    letter-spacing: 2px;
+}
+
+.main-content{  
+  background-image: url('https://cdn.glitch.global/91ae3d40-32a1-4ba3-90a8-0e817f46baf3/notas-br.jpg?v=1713652052071');
+  background-size: cover;   
+  background-color: rgba(255, 255, 255, 0.8);
+  background-position: center; 
+  height: 15vh;   
+}
+
+.center-vh {
+  min-height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.services{  
+  margin-top: 40px;
+  color:#000000;  
+}
+
+
+.jumbotron {
+  height: 100vh; 
+  background-color: hsl(0, 0%, 98%);
+  margin-top: 50px;
+  height: calc(100vh - 100px); 
+}
+
+
+
+/* Contenedor principal del footer */
+
+/* Estilos para el footer 232D3E */
+footer.sticky-footer {
+  background-color: #0784cd ; /* Fondo más oscuro */
+  color: #ffffff;
+  height: 65px;
+  /* Ancho maximo */  
+  position: fixed; /* Fija la posición del footer */
+  margin-top: 0px;  
+  bottom: 0; /* Lo coloca al final de la ventana del navegador */
+  width: 100%; /* Ancho completo del footer */
+  max-width: 1250px; /* Ancho máximo específico */
+  left: 50%; /* Centra el footer horizontalmente */
+  transform: translateX(-50%); /* Ajusta la posición horizontal*/    
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;  
+}
+
+/* Estilo para el texto dentro del footer */
+footer.sticky-footer .copyright span {
+  font-size: 18px; /* Tamaño de fuente */
+  font-weight: 500; /* Grosor de fuente */
+}
+
+/* Estilos para centrar horizontalmente las opciones del menú desplegable */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    text-align: center; 
+  }
+
+  .navbar-nav {
+    margin: 0 auto; /* Centra el navbar-nav horizontalmente */
+    display: table; /* Activa el modelo de caja de tabla para alinear los elementos en línea */
+  }
+
+  .navbar-nav .nav-item {
+    display: table-cell; /* Convierte los elementos en celdas de tabla */
+    vertical-align: middle; /* Centra verticalmente el contenido */
+    float: none; /* Elimina el flotado para evitar que los elementos se desplacen */
+    margin-top: 3px;
+  }
+  
+  .dropdown-toggle::after {
+    color: #ffffff;   
+  }
+}
