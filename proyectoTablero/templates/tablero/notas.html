@@ -8,6 +8,11 @@
 
 {% block contenido %}
 
+<script>
+  function confirmarEliminacion() {
+    return confirm('¿Estás seguro de que quieres eliminar esta nota?');
+  }
+</script>
 
 <div class="container" style="padding-bottom: 50px;">
   <div class="row justify-content-around mt-4">
@@ -36,7 +41,8 @@
           <div class="text-center">
             <a href="{% url 'tablero:editar_nota' nota.id %}" class="btn btn-primary">Editar</a>
             <!-- Formulario de eliminación -->
-            <form action="{% url 'tablero:eliminar_nota' nota.id %}" method="post" style="display: inline;">
+            <form action="{% url 'tablero:eliminar_nota' nota.id %}" method="post" style="display: inline;"
+              onsubmit="return confirmarEliminacion();">
               {% csrf_token %}
               <button type="submit" class="btn btn-danger">Eliminar</button>
             </form>
